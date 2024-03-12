@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,8 @@ Route::get('dashboard', function () {
 
 Route::controller(AccountController::class)->prefix('account')->group(function() {
     Route::get('', 'index')->name('account');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->group(function(){
+    Route::get('','index')->name('category');
 });
